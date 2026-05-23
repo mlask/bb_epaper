@@ -300,11 +300,11 @@ void bbepDrawSprite(BBEPDISP *pBBEP, const uint8_t *pSprite, int cx, int cy, int
         // start writing into the correct plane
         if (pBBEP->chip_type == BBEP_CHIP_UC81xx) {
             if (pBBEP->iFlags & BBEP_RED_SWAPPED) {
-                u8CMD1 = UC8151_DTM1;
-                u8CMD2 = UC8151_DTM2;
+                u8CMD1 = UC81XX_DTM1;
+                u8CMD2 = UC81XX_DTM2;
             } else {
-                u8CMD1 = UC8151_DTM2;
-                u8CMD2 = UC8151_DTM1;
+                u8CMD1 = UC81XX_DTM2;
+                u8CMD2 = UC81XX_DTM1;
             }
         } else {
             u8CMD1 = SSD1608_WRITE_RAM;
@@ -1420,11 +1420,11 @@ int bbepWriteStringCustom(BBEPDISP *pBBEP, void *pFont, int x, int y, char *szMs
                 // start writing into the correct plane
                 if (pBBEP->chip_type == BBEP_CHIP_UC81xx) {
                     if (pBBEP->iFlags & BBEP_RED_SWAPPED) {
-                        u8CMD1 = UC8151_DTM1;
-                        u8CMD2 = UC8151_DTM2;
+                        u8CMD1 = UC81XX_DTM1;
+                        u8CMD2 = UC81XX_DTM2;
                     } else {
-                        u8CMD1 = UC8151_DTM2;
-                        u8CMD2 = UC8151_DTM1;
+                        u8CMD1 = UC81XX_DTM2;
+                        u8CMD2 = UC81XX_DTM1;
                     }
                 } else {
                     u8CMD1 = SSD1608_WRITE_RAM;
@@ -1584,11 +1584,11 @@ int bbepWriteString(BBEPDISP *pBBEP, int x, int y, char *szMsg, int iSize, int i
     }
     if (pBBEP->chip_type == BBEP_CHIP_UC81xx) {
         if (pBBEP->iFlags & BBEP_RED_SWAPPED) {
-            ucCMD1 = UC8151_DTM1;
-            ucCMD2 = UC8151_DTM2;
+            ucCMD1 = UC81XX_DTM1;
+            ucCMD2 = UC81XX_DTM2;
         } else {
-            ucCMD1 = UC8151_DTM2;
-            ucCMD2 = UC8151_DTM1;
+            ucCMD1 = UC81XX_DTM2;
+            ucCMD2 = UC81XX_DTM1;
         }
     } else {
         ucCMD1 = SSD1608_WRITE_RAM;
